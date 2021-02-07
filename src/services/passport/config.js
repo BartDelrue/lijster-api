@@ -2,10 +2,14 @@ import passport from 'passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { config } from 'dotenv';
 import User from '../../models/user.model';
+import debug from 'debug';
+
+const DEBUG = debug('dev');
 
 config();
 
 const jwtPublicSecret = process.env.JWT_PUBLIC_SECRET.replace(/\\n/g, '/n');
+DEBUG(jwtPublicSecret);
 
 const cookieExtractor = req => {
   let token = null;

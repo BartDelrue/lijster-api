@@ -4,10 +4,15 @@ import isEmail from 'validator/lib/isEmail';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { config } from 'dotenv';
+import debug from 'debug';
+
+const DEBUG = debug('dev');
 
 config();
 
 const jwtPrivateSecret = process.env.JWT_PRIVATE_SECRET.replace(/\\n/g, '\n');
+DEBUG(jwtPrivateSecret)
+
 const Schema = mongoose.Schema;
 
 // Create Schema
