@@ -1,10 +1,15 @@
 import passportJWT from '../services/passport/config';
 import { ApplicationError } from '../helpers/errors';
 import List from '../models/list.model';
+import debug from 'debug';
+
+const DEBUG = debug('dev');
 
 export default {
   authenticate: (req, res, next) => {
     passportJWT.authenticate('jwt', {session: false}, (err, user, info) => {
+      DEBUG(info)
+      DEBUG(req)
       if (err) {
         return next(err);
       }
