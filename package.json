@@ -4,7 +4,7 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && npm run build-babel",
+    "build": "npm cache clean --force && rm -rf node_modules && npm run clean && npm run build-babel",
     "build-babel": "babel -d ./build ./src -s",
     "clean": "rm -rf .nyc_output build coverage && mkdir build",
     "dev": "cross-env DEBUG=dev nodemon --exec babel-node ./src/server.js",
