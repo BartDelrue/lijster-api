@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/930e08e4-d02e-4916-b4b7-88651023c2d2/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/lijster-api",
+    "appService.deploySubpath": "."
+}
