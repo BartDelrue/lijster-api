@@ -9,7 +9,8 @@ export default {
   authenticate: (req, res, next) => {
     passportJWT.authenticate('jwt', {session: false}, (err, user, info) => {
       DEBUG(info)
-      DEBUG(req)
+      DEBUG(req.headers.authorization)
+      DEBUG(user)
       if (err) {
         return next(err);
       }
