@@ -8,7 +8,7 @@ const DEBUG = debug('dev');
 
 config();
 
-const jwtPublicSecret = process.env.JWT_PUBLIC_SECRET.replace(/\\n/g, '/n');
+const jwtPublicSecret = process.env.JWT_PUBLIC_SECRET.replace(/\\\\n/g, '\n');
 DEBUG(jwtPublicSecret);
 
 const cookieExtractor = req => {

@@ -10,7 +10,7 @@ const DEBUG = debug('dev');
 
 config();
 
-const jwtPrivateSecret = process.env.JWT_PRIVATE_SECRET.replace(/\\n/g, '\n');
+const jwtPrivateSecret = process.env.JWT_PRIVATE_SECRET.replace(/\\\\n/g, '\n');
 DEBUG(jwtPrivateSecret)
 
 const Schema = mongoose.Schema;
