@@ -4,12 +4,12 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "build": "npm cache clean --force && rm -rf node_modules && npm run clean && npm run build-babel",
+    "build": "yarn run clean && yarn run build-babel",
     "build-babel": "babel -d ./build ./src -s",
-    "clean": "rm -rf .nyc_output build coverage && mkdir build",
+    "clean": "rm -rf .nyc_output build coverage && mkdir -m 777 build",
     "dev": "cross-env DEBUG=dev nodemon --exec babel-node ./src/server.js",
     "start": "node ./build/server.js",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
